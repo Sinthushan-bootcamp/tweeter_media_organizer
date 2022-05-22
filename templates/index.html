@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Twitter Media</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Twitter Media</h1>
+    </header>
+
+    <main>
+        <h1>Search User</h1>
+        <form method="post">
+            <label for="userName">Username:</label>
+            <input type="text" id="userName" name="user_name" />
+            <br>
+            <label for="sortBy">Sort By:</label>
+            <select id="sortBy" name="sort_by">
+                <option value="favorite_count">Favorites</option>
+                <option value="created_date">Recent</option>
+                <option value="retweets">Retweets</option>
+                <option value="comments">Comments</option>
+            </select>
+            <label for="sortOrder">Sort Order:</label>
+            <select id="sortOrder" name="sort_order">
+                <option value="False">Highest to Lowest</option>
+                <option value="True">Lowest to Highest</option>
+            </select>
+            <input type="submit">
+        </form>
+        <div>
+            {% for pic_url in urls %}
+                <img src="{{ pic_url }}" alt="image" width="500" height="600">
+            {% endfor %}
+        </div>
+    </main>
+  </body>
+</html>
